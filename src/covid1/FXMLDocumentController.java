@@ -14,6 +14,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -24,7 +26,12 @@ import org.w3c.dom.NodeList;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
+import java.io.InputStream;
+import java.lang.invoke.StringConcatFactory;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.ResourceBundle;
 
 /**
@@ -52,7 +59,10 @@ public class FXMLDocumentController implements Initializable {
     private Button but4;
     @FXML
     private Button get_url_btn;
-    
+    @FXML
+    public TextField url_textfield;
+    @FXML
+    public Label dataTextArea;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -101,10 +111,14 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void get_data(ActionEvent event) {
+        String fileUrl = url_textfield.getText();
+        String FILE_URL = fileUrl;
 
         try {
+            InputStream in = new URL(FILE_URL).openStream();
+            Files.copy(in, Paths.get(".\\.\\fileStorage\\data.xml"), StandardCopyOption.REPLACE_EXISTING);
 
-            File fXmlFile = new File("C:\\Users\\tahaa\\Desktop\\muratodev\\opendata.ecdc.europa.eu.xml");
+            File fXmlFile = new File(".\\.\\fileStorage\\data.xml");
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(fXmlFile);
@@ -123,16 +137,16 @@ public class FXMLDocumentController implements Initializable {
 
 //                    VakalarController.table1.set
 
-                    System.out.println("dateRep : " + getTagValue("dateRep", eElement));
-                    System.out.println("day : " + getTagValue("day", eElement));
-                    System.out.println("month : " + getTagValue("month", eElement));
-                    System.out.println("year : " + getTagValue("year", eElement));
-                    System.out.println("cases : " + getTagValue("cases", eElement));
-                    System.out.println("deaths : " + getTagValue("deaths", eElement));
-                    System.out.println("SalarcountriesAndTerritoriesy : " + getTagValue("countriesAndTerritories", eElement));
-                    System.out.println("geoId : " + getTagValue("geoId", eElement));
-                    System.out.println("countryterritoryCode : " + getTagValue("countryterritoryCode", eElement));
-                    System.out.println("popData2018 : " + getTagValue("popData2018", eElement));
+                    System.out.print("dateRep : " + getTagValue("dateRep", eElement) + " -- ");
+                    System.out.print("day : " + getTagValue("day", eElement)+ " -- ");
+                    System.out.print("month : " + getTagValue("month", eElement)+ " -- ");
+                    System.out.print("year : " + getTagValue("year", eElement)+ " -- ");
+                    System.out.print("cases : " + getTagValue("cases", eElement)+ " -- ");
+                    System.out.print("deaths : " + getTagValue("deaths", eElement)+ " -- ");
+                    System.out.print("SalarcountriesAndTerritoriesy : " + getTagValue("countriesAndTerritories", eElement)+ " -- ");
+                    System.out.print("geoId : " + getTagValue("geoId", eElement)+ " -- ");
+                    System.out.print("countryterritoryCode : " + getTagValue("countryterritoryCode", eElement)+ " -- ");
+                    System.out.print("popData2018 : " + getTagValue("popData2018", eElement)+ " -- ");
                     System.out.println("continentExp : " + getTagValue("continentExp", eElement));
 
                 }

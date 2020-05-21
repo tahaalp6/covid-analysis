@@ -13,19 +13,19 @@
             <Font name="Verdana" size="44.0" />
          </font>
       </Label>
-      <Label fx:id="label2" layoutX="94.0" layoutY="294.0" prefHeight="80.0" prefWidth="489.0" text="Dünya geneli vakalar --&gt;" textFill="#0088ff">
+      <Label fx:id="label2" layoutX="94.0" layoutY="374.0" prefHeight="80.0" prefWidth="489.0" text="Dünya geneli vakalar --&gt;" textFill="#0088ff">
          <font>
             <Font name="System Bold" size="29.0" />
          </font>
       </Label>
-      <Button fx:id="but1" layoutX="460.0" layoutY="319.0" mnemonicParsing="false" onAction="#bak" prefHeight="31.0" prefWidth="115.0" text="tıkla" textFill="#3c2d2d" />
+      <Button fx:id="but1" layoutX="460.0" layoutY="398.0" mnemonicParsing="false" onAction="#bak" prefHeight="31.0" prefWidth="115.0" text="tıkla" textFill="#3c2d2d" />
       <Button fx:id="but2" layoutX="799.0" layoutY="471.0" mnemonicParsing="false" onAction="#cikis" prefHeight="60.0" prefWidth="235.0" text="ÇIKIŞ" />
-      <Label fx:id="label3" layoutX="199.0" layoutY="392.0" prefHeight="60.0" prefWidth="279.0" text="Grafiği gör --&gt;" textFill="#1698f5">
+      <Label fx:id="label3" layoutX="199.0" layoutY="429.0" prefHeight="60.0" prefWidth="279.0" text="Grafiği gör --&gt;" textFill="#1698f5">
          <font>
             <Font name="Arial Black" size="29.0" />
          </font>
       </Label>
-      <Button fx:id="but3" layoutX="460.0" layoutY="407.0" mnemonicParsing="false" onAction="#git" prefHeight="31.0" prefWidth="115.0" text="tıkla" />
+      <Button fx:id="but3" layoutX="460.0" layoutY="444.0" mnemonicParsing="false" onAction="#git" prefHeight="31.0" prefWidth="115.0" text="tıkla" />
       <Label layoutX="156.0" layoutY="482.0" prefHeight="45.0" prefWidth="267.0" text="Dağılımı gör --&gt; " textFill="#0090ff">
          <font>
             <Font name="Arial Black" size="29.0" />
@@ -34,5 +34,6 @@
       <Button fx:id="but4" layoutX="460.0" layoutY="489.0" mnemonicParsing="false" onAction="#go" prefHeight="31.0" prefWidth="115.0" text="tıkla" />
       <Button fx:id="get_url_btn" layoutX="780.0" layoutY="121.0" mnemonicParsing="false" onAction="#get_data" text="Veri Yükle" />
       <TextField fx:id="url_textfield" layoutX="156.0" layoutY="121.0" prefHeight="31.0" prefWidth="606.0" promptText="Url" />
+      <Label fx:id="dataTextArea" layoutX="59.0" layoutY="152.0" prefHeight="236.0" prefWidth="954.0" />
    </children>
 </AnchorPane>
