@@ -29,7 +29,7 @@ public class VakalarController implements Initializable {
     @FXML
     private AnchorPane vpane1;
     @FXML
-    private TableView<covidd> table1;
+    public TableView<covidd> table1;
     @FXML
     private TableColumn<covidd, String> country;
     @FXML
